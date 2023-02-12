@@ -48,24 +48,28 @@
   style="padding-left: 125px;padding-top: 20px; width: 50%;"
 >
 
-  <p style="font-size: 11px; color: #999;">搜狗已为您找到约<%= @total %>条相关结果</p>
+  <% if @banned %>
+    <p class="alert alert-danger">您的搜索包含敏感关键词</p>
+  <% else %>
+    <p style="font-size: 11px; color: #999;">搜狗已为您找到约<%= @total %>条相关结果</p>
 
-  <% @pages.each do |page| %>
-    <div class="item">
-      <div><%= link_to "#{@keyword} - #{page.title}", "#" %></div>
-      <div style="margin-top: 10px;">
-        <span style="color: #999;"><%= page.day&.strftime("%Y年%m月%d日") %></span>
-        <%= page.note %>
+    <% @pages.each do |page| %>
+      <div class="item">
+        <div><%= link_to "#{@keyword} - #{page.title}", "#" %></div>
+        <div style="margin-top: 10px;">
+          <span style="color: #999;"><%= page.day&.strftime("%Y年%m月%d日") %></span>
+          <%= page.note %>
+        </div>
+        <div style="color: green;margin-top: 10px;">
+          <span class="from"><%= page.from %></span>
+          -
+          <span class="url"><%= page.url %></span>
+          -
+          <span class="day"><%= page.day %></span>
+        </div>
       </div>
-      <div style="color: green;margin-top: 10px;">
-        <span class="from"><%= page.from %></span>
-        -
-        <span class="url"><%= page.url %></span>
-        -
-        <span class="day"><%= page.day %></span>
-      </div>
-    </div>
+    <% end %>
+
+    <%= paginate @pages %>
   <% end %>
-
-  <%= paginate @pages %>
 </div>
