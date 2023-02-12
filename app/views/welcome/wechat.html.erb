@@ -14,11 +14,11 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="/">网页</a>
+          <a class="nav-link" aria-current="page" href="/">网页</a>
         </li>
 
         <li class="nav-item">
-          <a class="nav-link" aria-current="page" href="/wechat">微信</a>
+          <a class="nav-link active" aria-current="page" href="/wechat">微信</a>
         </li>
 
         <% ['知乎', '图片', '视频', '医疗', '汉语', '翻译', '问问', '百科', '地图'].each do |name| %>
@@ -54,8 +54,8 @@
 </nav>
 
 <div class="home-container">
-  <div>
-    <%= image_tag "sogou.png", width: 220, height: 70 %>
+  <div style="margin-bottom: 50px;">
+    <%= image_tag "sogou-wechat.png", width: 276, height: 66 %>
   </div>
   <div class="input-group mb-3 mt-3">
     <input
@@ -64,14 +64,15 @@
       aria-label="Recipient's username"
       aria-describedby="basic-addon2"
     >
-    <button type="submit" class="input-group-text">搜狗搜索</button>
+    <button type="submit" class="input-group-text">搜文章</button>
+    <button
+      class="btn btn-light"
+      style="margin-left: 10px; border: 1px solid #ccc;"
+    >搜公众号</button>
   </div>
 
-  <div class="footer">
-    <p>企业推广 - 免责声明 - 意见反馈及投诉 - 隐私政策</p>
-    <p>药品医疗器械网络信息服务备案：（京）网药械信息备字（2021）第00047号</p>
-    <p>
-      © 2004-2023 Sogou.com / 网上有害信息举报专区 / 京网文(2019)6117-724号 / 京ICP证050897号
-    </p>
+  <div class="footer" style="margin-top: 60%;">
+    <p>企业推广 | 免责声明 | 意见反馈及投诉 | 隐私政策</p>
+    <p>© 2023 SOGOU - 京ICP证050897号 - 京ICP备11001839号-1 - 京公网安备11000002000025号</p>
   </div>
 </div>
