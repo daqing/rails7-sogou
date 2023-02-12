@@ -57,15 +57,21 @@
   <div>
     <%= image_tag "sogou.png", width: 220, height: 70 %>
   </div>
-  <div class="input-group mb-3 mt-3">
-    <input
-      type="text"
-      class="form-control"
-      aria-label="Recipient's username"
-      aria-describedby="basic-addon2"
-    >
-    <button type="submit" class="input-group-text">搜狗搜索</button>
-  </div>
+
+  <%= form_with url: search_path, method: :get, data: {remote: false} do %>
+    <div class="input-group mb-3 mt-3">
+
+      <input
+        name="keyword"
+        type="text"
+        class="form-control"
+        aria-label="Recipient's username"
+        aria-describedby="basic-addon2"
+      >
+      <button type="submit" class="input-group-text">搜狗搜索</button>
+
+    </div>
+  <% end %>
 
   <div class="footer">
     <p>企业推广 - 免责声明 - 意见反馈及投诉 - 隐私政策</p>

@@ -1,0 +1,51 @@
+<div class="search-header">
+  <div class="row">
+    <div class="col d-flex" style="align-items: center;">
+      <div>
+        <%= image_tag "search-result.png", width: 115, height: 50 %>
+      </div>
+      <div>
+        <%= form_with url: search_path, method: :get, data: {remote: false} do %>
+          <div class="input-group mb-3 mt-3" style="width: 600px;">
+            <input
+              name="keyword"
+              type="text"
+              class="form-control"
+              aria-label="Recipient's username"
+              aria-describedby="basic-addon2"
+            >
+            <button type="submit" class="input-group-text">搜狗搜索</button>
+          </div>
+        <% end %>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div
+        class="d-flex search-result-nav"
+        style="color: #999; justify-content: flex-end"
+      >
+        <div>无障碍</div>
+        <div>|</div>
+        <div>设置</div>
+        <div>登录</div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="d-flex search-options" style="margin-left: 125px; cursor: pointer;">
+      <div class="active">网页</div>
+      <div>微信</div>
+      <div>知乎</div>
+    </div>
+  </div>
+</div>
+
+<div
+  class="search-results"
+  style="padding-left: 125px;padding-top: 20px; width: 50%;"
+>
+
+  <p style="font-size: 11px; color: #999;">搜狗已为您找到约<%= @total %>条相关结果</p>
+
+  <%= render @pages %>
+</div>
