@@ -1,0 +1,20 @@
+.nav-link.active {
+  color: #FF5A34 !important;
+}
+
+.home-header-right-menu {
+  color: #999;
+  justify-content: center;
+  align-items: center;
+
+  div {
+    font-size: 12px;
+    margin-right: 10px;
+  }
+
+  .btn {
+    --bs-btn-padding-y: .3rem;
+    --bs-btn-padding-x: .3rem;
+    --bs-btn-font-size: .75rem;
+  }
+}

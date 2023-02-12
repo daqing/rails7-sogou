@@ -1,1 +1,50 @@
-<h1 style="text-align: center; color: green;margin-top: 20px;">Hello, World!</h1>
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <div class="container-fluid">
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">网页</a>
+        </li>
+
+        <% ['微信', '知乎', '图片', '视频', '医疗', '汉语', '翻译', '问问', '百科', '地图'].each do |name| %>
+          <li class="nav-item">
+            <a class="nav-link" href="#"><%= name %></a>
+          </li>
+        <% end %>
+
+        <li class="nav-item dropdown">
+          <a
+            class="nav-link dropdown-toggle"
+            href="#"
+            role="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            更多
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">知识</a></li>
+            <li><a class="dropdown-item" href="#">应用</a></li>
+            <li><a class="dropdown-item" href="#">全部&gt;</a></li>
+          </ul>
+        </li>
+      </ul>
+      <div class="d-flex home-header-right-menu">
+        <div>无障碍</div>
+        <div>|</div>
+        <div><button class="btn btn-danger btn-sm">登录</button></div>
+      </div>
+    </div>
+  </div>
+</nav>
