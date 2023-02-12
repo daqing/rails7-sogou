@@ -1,5 +1,8 @@
+# frozen_string_literal: true
+
+# 黑名单过滤功能
 class Blacklist
-  def is_banned?(keyword)
+  def banned?(keyword)
     list.include?(keyword)
   end
 

@@ -6,7 +6,7 @@ class WelcomeController < ApplicationController
   def search
     @keyword = params[:keyword]
 
-    @banned = Blacklist.new.is_banned?(@keyword)
+    @banned = Blacklist.new.banned?(@keyword)
 
     query = WebPage.where('note ILIKE ?', "%#{@keyword}%")
 
