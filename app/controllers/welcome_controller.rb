@@ -6,6 +6,6 @@ class WelcomeController < ApplicationController
   def search
     @keyword = params[:keyword]
 
-    @pages = []
+    @pages = WebPage.where('note ILIKE ?', "%#{@keyword}%")
   end
 end

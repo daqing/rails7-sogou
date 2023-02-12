@@ -50,19 +50,19 @@
 
   <p style="font-size: 11px; color: #999;">搜狗已为您找到约<%= @total %>条相关结果</p>
 
-  <% 10.times do %>
+  <% @pages.each do |page| %>
     <div class="item">
-      <div><%= link_to "#{@keyword} - CSDN", "#" %></div>
+      <div><%= link_to "#{@keyword} - #{page.title}", "#" %></div>
       <div style="margin-top: 10px;">
-        <span style="color: #999;">2021年2月5日</span>
-        csdn已为您找到关于rails相关内容，包含rails相关文档代码介绍、相关教程视频课程，以及相关rails问答内容。为您解决当下相关问题，如果想了解更详细rails内...
+        <span style="color: #999;"><%= page.day&.strftime("%Y年%m月%d日") %></span>
+        <%= page.note %>
       </div>
       <div style="color: green;margin-top: 10px;">
-        <span class="from">CSDN技术社区</span>
+        <span class="from"><%= page.from %></span>
         -
-        <span class="url">www.csdn.net/gather...</span>
+        <span class="url"><%= page.url %></span>
         -
-        <span class="day">2021-2-5</span>
+        <span class="day"><%= page.day %></span>
       </div>
     </div>
   <% end %>
