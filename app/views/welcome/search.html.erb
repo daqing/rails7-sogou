@@ -2,13 +2,16 @@
   <div class="row">
     <div class="col d-flex" style="align-items: center;">
       <div>
-        <%= image_tag "search-result.png", width: 115, height: 50 %>
+        <%= link_to root_path do %>
+          <%= image_tag "search-result.png", width: 115, height: 50 %>
+        <% end %>
       </div>
       <div>
         <%= form_with url: search_path, method: :get, data: {remote: false} do %>
           <div class="input-group mb-3 mt-3" style="width: 600px;">
             <input
               name="keyword"
+              value="<%= @keyword %>"
               type="text"
               class="form-control"
               aria-label="Recipient's username"
@@ -47,5 +50,20 @@
 
   <p style="font-size: 11px; color: #999;">搜狗已为您找到约<%= @total %>条相关结果</p>
 
-  <%= render @pages %>
+  <% 10.times do %>
+    <div class="item">
+      <div><%= link_to "#{@keyword} - CSDN", "#" %></div>
+      <div style="margin-top: 10px;">
+        <span style="color: #999;">2021年2月5日</span>
+        csdn已为您找到关于rails相关内容，包含rails相关文档代码介绍、相关教程视频课程，以及相关rails问答内容。为您解决当下相关问题，如果想了解更详细rails内...
+      </div>
+      <div style="color: green;margin-top: 10px;">
+        <span class="from">CSDN技术社区</span>
+        -
+        <span class="url">www.csdn.net/gather...</span>
+        -
+        <span class="day">2021-2-5</span>
+      </div>
+    </div>
+  <% end %>
 </div>
